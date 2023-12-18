@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Length Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        input {
+            padding: 5px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Word Length Checker</h1>
+
+    <label for="wordInput">Enter a word:</label>
+    <input type="text" id="wordInput" oninput="checkWordLength()">
+
+    <div id="result"></div>
+
+    <script>
+        function checkWordLength() {
+            var wordInput = document.getElementById("wordInput").value;
+            var resultDiv = document.getElementById("result");
+
+            if (wordInput.length === 7) {
+                resultDiv.innerHTML = '<p class="success">The word has 7 letters!</p>';
+            } else {
+                resultDiv.innerHTML = '<p class="error">The word does not have 7 letters.</p>';
+            }
+        }
+    </script>
+
+</body>
+</html>
